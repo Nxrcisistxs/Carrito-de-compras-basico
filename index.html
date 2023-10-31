@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <title>Carrito de Compras Basico</title>
+    </head>
+    <body>
+        <div class="carrito" id="contador-carrito" onclick="alternarCarritoSeleccionado()">0</div>
+        <div id="productos">
+            <div class="producto">
+                <img src="img/1.jpg" alt="">
+                <div>
+                    <h3>Producto 1</h3>
+                    <p>Precio: $10.99</p>
+                    <button onclick="agregarProductoAlCarrito('Producto 1', 10.99)">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="img/1.jpg" alt="">
+                <div>
+                    <h3>Producto 2</h3>
+                    <p>Precio: $15.99</p>
+                    <button onclick="agregarProductoAlCarrito('Producto 2', 15.99)">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="img/1.jpg" alt="">
+                <div>
+                    <h3>Producto 3</h3>
+                    <p>Precio: $20.99</p>
+                    <button onclick="agregarProductoAlCarrito('Producto 3', 20.99)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+        <div id="carrito-seleccionado">
+            <h2>Productos seleccionados:</h2>
+            <ul id="lista-seleccionados"></ul>
+            <div class="total" id="total">Total: $0.00</div>
+            <button id="pagar-btn" onclick="mostrarFormularioPago()">Pagar</button>
+        </div>
+        <div id="formulario-pago-overlay">
+            <div id="formulario-pago">
+                <button id="cerrar-formulario" onclick="cerrarFormularioPago()">X</button>
+                <h2>Formulario de Pago</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label for="tarjeta">Número de tarjeta:</label>
+                <input type="text" id="tarjeta" required>
+                <button onclick="realizarPago()">Realizar Pago</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
